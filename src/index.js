@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {DataLayer} from './react-context-api/DataLayer'
+import reducer,{ initialState } from './react-context-api/reducer'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DataLayer initialState = {initialState} reducer = {reducer} >
+      <App />
+    </DataLayer>
   </React.StrictMode>,
   document.getElementById('root')
 );
